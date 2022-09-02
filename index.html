@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script type="text/javascript" src="lib/jquery-3.4.1.min.js" ></script>
+
+<head>
+	<meta charset="UTF-8">
+	<title>燕园-昌平班车</title>
+</head>
+<body>
+	<div id="showDiv">
+		
+	</div>
+
+
+
+	<script type="text/javascript">
+	// $.post("/getKeywords",{code:this_code},function(rtnSvr){
+	//     				// console.log(this_code);
+	//     				// console.log(rtnSvr);
+	//     				// console.log(now_text)
+	//     				// console.log(text_span)
+	//     				text_span.html(rtnSvr);
+	//     				now_text.focus();
+	//     			})
+	</script>
+
+	<script type="text/javascript">
+		// var httpRequest = new XMLHttpRequest();//第一步：建立所需的对象
+  //       httpRequest.open('GET', 'https://www.baidu.com', true);//第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
+  //       httpRequest.send();//第三步：发送请求  将请求参数写在URL中
+  //        // * 获取数据后的处理程序
+         
+  //       httpRequest.onreadystatechange = function () {
+  //           if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+  //               var json = httpRequest.responseText;//获取到json字符串，还需解析
+  //               console.log(json);
+  //           }
+  //       };
+	</script>
+	<script type="text/javascript">
+// 		$.ajax({
+//     url: 'http://www.baidu.com',
+//     headers: {
+//         'Content-Type': 'application/x-www-form-urlencoded'
+//     },
+//     type: "POST", /* or type:"GET" or type:"PUT" */
+//     dataType: "json",
+//     data: {
+//     },
+//     success: function (result) {
+//         console.log(result);
+//     },
+//     error: function () {
+//         console.log("error");
+//     }
+// });
+// 		window.location.replace("http://www.w3schools.com");
+	</script>
+
+	<iframe id="proxy" src="http://server.com/remote.html" onload = "postMsg()" style="display: none" ></iframe>  
+    <script type="text/javascript">  
+        var obj = {  
+            msg: 'hello world'  
+        }  
+        function postMsg (){  
+            var iframe = document.getElementById('proxy');  
+            var win = iframe.contentWindow;  
+            win.postMessage(obj,'http://server.com');  
+        }  
+    </script>
+
+    <iframe id="bus_reservation" src="https://process.pku.edu.cn/site/reservation/launch" onload = "postMsg()" frameborder="0" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:100vh;" ></iframe>  
+    <script type="text/javascript">  
+        var obj = {  
+            date: '2022-09-05'  ,
+            period: '818',
+            sub_resource_id: "0"
+        }  
+        function postMsg (){  
+            var iframe = document.getElementById('bus_reservation');  
+            var win = iframe.contentWindow;  
+            win.sendMessage(obj,'*');  
+        }
+
+    </script>
+
+
+</body>
+</html>
